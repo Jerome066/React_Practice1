@@ -17,21 +17,24 @@ export default function Component() {
     }
 
     const buttonOnClick = () => {
+        const regex = /[A-Z]/g
+        const found = text.match(regex)
 
-        if (text != 'a') {
+
+        if (found) {
             setUpdated(text)
         }
-        else{
+        else {
             setUpdated("Error")
         }
-        
-    } 
+
+    }
 
     return (
         <div>
-            <input type="text" name="" id="" placeholder='Nombre' value={text} onChange={textOnChance}/>
+            <input type="text" name="" id="" placeholder='Nombre' value={text} onChange={textOnChance} />
             <br />
-            <input type="password" name="" id="" placeholder='Password' value={pass} onChange={PassOnChange}/>
+            <input type="password" name="" id="" placeholder='Password' value={pass} onChange={PassOnChange} />
             <p>{text}</p>
             <p>{pass}</p>
 
